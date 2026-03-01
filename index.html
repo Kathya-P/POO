@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cuestionario - POO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <p class="eyebrow">Programacion Orientada a Objetos</p>
+        <h1>Cuestionario parcial</h1>
+        <p class="lead">Basado en los 6 temas vistos durante el período UNO.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card" id="quiz-app">
+        <div class="quiz-header">
+          <h2 id="topic-title">T1: Introduccion a POO</h2>
+          <div class="topic-controls">
+            <label class="topic-label" for="topic-select">Tema</label>
+            <select id="topic-select" class="topic-select" aria-label="Seleccionar tema"></select>
+            <button class="btn ghost" id="shuffle-btn" type="button">Mezclar</button>
+          </div>
+          <p class="muted">Selecciona una respuesta y mira al instante si esta correcta.</p>
+        </div>
+
+        <div class="quiz-progress">
+          <span id="question-count">1 / 1</span>
+          <div class="progress-bar" aria-hidden="true">
+            <div id="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="quiz-body" id="quiz-body">
+          <div id="question-text" class="question-text"></div>
+
+          <form id="answer-form" class="answer-form">
+            <fieldset id="options-container" class="options" aria-label="Opciones"></fieldset>
+
+            <div id="short-container" class="short-answer hidden">
+              <label for="short-answer">Tu respuesta</label>
+              <textarea id="short-answer" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+            </div>
+          </form>
+
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+
+          <div class="quiz-actions">
+            <button class="btn" id="check-btn" type="button">Revisar</button>
+            <button class="btn ghost" id="show-btn" type="button">Mostrar respuesta</button>
+            <button class="btn ghost" id="prev-btn" type="button">Anterior</button>
+            <button class="btn" id="next-btn" type="button">Siguiente</button>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <div class="final-screen hidden" id="final-screen" role="dialog" aria-modal="true">
+      <div class="final-card">
+        <div class="final-header">
+          <h3>Resumen final</h3>
+          <p class="muted">Resultados del tema completado.</p>
+        </div>
+        <div class="breakdown" aria-label="Desglose de resultados">
+          <div class="breakdown-bar" aria-hidden="true">
+            <div class="breakdown-seg ok" id="seg-correct"></div>
+            <div class="breakdown-seg bad" id="seg-incorrect"></div>
+            <div class="breakdown-seg na" id="seg-unanswered"></div>
+          </div>
+          <div class="breakdown-legend">
+            <span><span class="dot ok" aria-hidden="true"></span>Correctas</span>
+            <span><span class="dot bad" aria-hidden="true"></span>Incorrectas</span>
+            <span><span class="dot na" aria-hidden="true"></span>Sin responder</span>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-label">Total</div>
+            <div class="stat-value" id="stats-total">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Respondidas</div>
+            <div class="stat-value" id="stats-answered">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Correctas</div>
+            <div class="stat-value" id="stats-correct">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Incorrectas</div>
+            <div class="stat-value" id="stats-incorrect">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Sin responder</div>
+            <div class="stat-value" id="stats-unanswered">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Puntuacion</div>
+            <div class="stat-value" id="stats-score">0 / 0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Precision (respondidas)</div>
+            <div class="stat-value" id="stats-accuracy-answered">0%</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Precision (total)</div>
+            <div class="stat-value" id="stats-accuracy">0%</div>
+          </div>
+        </div>
+
+        <div class="topic-summary" aria-label="Resultados por tema">
+          <h4 class="topic-summary-title">Resultados por tema</h4>
+          <div class="topic-summary-table" role="table" aria-label="Tabla de resultados por tema">
+            <div class="topic-summary-head" role="rowgroup">
+              <div class="topic-summary-row head" role="row">
+                <div class="cell topic" role="columnheader">Tema</div>
+                <div class="cell" role="columnheader">Buenas</div>
+                <div class="cell" role="columnheader">Malas</div>
+                <div class="cell" role="columnheader">Sin resp.</div>
+                <div class="cell" role="columnheader">%</div>
+              </div>
+            </div>
+            <div id="topic-stats" class="topic-summary-body" role="rowgroup"></div>
+          </div>
+          <p class="topic-reco" id="topic-reco"></p>
+        </div>
+        <div class="final-actions">
+          <button class="btn ghost" id="review-btn" type="button">Volver a preguntas</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Hecho para estudio personal. Actualizado el 2026-02-28.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

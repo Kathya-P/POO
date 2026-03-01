@@ -1,0 +1,147 @@
+Programación
+Orientada a 
+Objetos
+By Ing. Edvin Nunez
+contenido
+INTRODUCCIÓN A POO
+ CLASES
+ OBJETOS
+Introducción a la Programación 
+Orientada a Objetos
+Paradigma
+• Un paradigma de programación es una 
+forma o modelo de pensar cómo se 
+diseñan y construyen los programas.
+• Programación Estructurada
+• Programación Orientada a objetos
+• Programación orientada a eventos
+
+
+Introducción a la Programación 
+Orientada a Objetos
+• La programación orientada a objetos 
+(POO) es un modelo de programación 
+que utiliza objetos, ligados mediante 
+mensajes, para la solución de 
+problemas.
+• La característica principal de la POO es 
+llevar los elementos del mundo real a 
+un nivel de código que represente lo 
+mismo. 
+
+Introducción a la Programación 
+Orientada a Objetos
+• Por ejemplo, los empleados de una 
+empresa por características comunes 
+tienen un código que los identifica: 
+nombres y apellidos, categoría de 
+empleado, entre otras propias del 
+empleado.
+
+Origen de la 
+programación 
+orientada a 
+objetos
+• Surge por que cuando los requisitos de un 
+software cambiaban, realizar 
+modificaciones podría ser difícil.  Porque 
+ellos requerían que la persona que hiciera 
+las modificaciones entendiera todas las 
+partes.
+• Además en muchos casos la persona que 
+hacia los cambios no era el autor original 
+del software.
+• Por lo cual se necesitaba una metodología 
+que permitiera facilitar dicho proceso.
+¿A qué objetos nos referimos?
+• Si nos detenemos a pensar en un determinado problema que intentamos 
+resolver podremos identificar entidades de interés, las cuales pueden ser 
+objetos potenciales que poseen un conjunto de propiedades o atributos, y 
+un conjunto de métodos mediante los cuales muestran su comportamiento.
+• Y no sólo eso, también podremos ver, un conjunto de interrelaciones entre 
+ellos conducidas por mensajes a los que responden mediante métodos.
+¿A qué objetos nos 
+referimos?
+• Ejemplo banco.
+• Identificamos entidades cuentas: cuenta del cliente 
+1, cuenta del cliente 2, etc.
+• Pues bien, una cuenta puede verse como un objeto 
+que tiene atributos: nombre, número de cuenta y 
+saldo
+• También un conjunto de métodos como: 
+IngresarDinero, RetirarDinero, AbonarIntereses, 
+SaldoActual, Transferencia, etc.
+Pensando en objetos
+• Desde el modelo de la POO, un programa 
+es un conjunto de objetos que dialogan 
+entre sí para realizar las distintas tareas 
+programadas, a diferencia de la 
+definición básica que conocemos de que 
+un programa es una lista de instrucciones 
+que le indican a la máquina qué hacer.
+Pensando en 
+objetos
+
+Clases y objetos
+• Una clase: es una plantilla 
+que posee atributos y 
+métodos la cual permite 
+crear objetos. Puede 
+considerarse como una 
+plantilla o molde para 
+crear objetos.
+
+Clases y objetos
+• Dentro de una clase podemos 
+encontrar atributos (variables) 
+y métodos (comportamiento).
+• Estos atributos y métodos 
+pertenecen tanto a la clase 
+como a cada uno de los 
+objetos creados mediante las 
+instancias creadas a partir de 
+esta.
+Clases y 
+objetos
+
+Clases y objetos
+• Un objeto de una determinada clase se crea en el momento en que se 
+define una variable de dicha clase.
+• Algunos autores emplean el término instancia en el sentido de que una 
+instancia es la representación concreta y específica.
+• Desde este punto de vista, los términos instancia y objeto son lo mismo.
+Clases y objetos
+
+Definición de clases en 
+java
+
+• Para crear un objeto se 
+debe invocar a su 
+constructor, el cual 
+coincide con el nombre de 
+la clase y se debe utilizar 
+la palabra reservada new:
+
+Definición de 
+constructores en java
+• Los constructores, además de permitir la instancia de objetos, 
+realizan la inicialización de los atributos del objeto. Esto se logra 
+pasando los valores de los atributos como parámetros en la 
+invocación del constructor
+Definición de 
+constructores en java
+• la palabra this se utiliza para referirse a los atributos de la clase y 
+en particular, para diferenciar cuando los parámetros del 
+constructor tienen el mismo nombre que los atributos.
+
+Homework
+• Instalar Apache Netbeans IDE 
+• Video guía de ayuda 
+  
+https://youtu.be/GCFT84nCQY0?si=NcsRVSsc7N3XUawL
+
+Bibliografía
+➢ Sierra, F. (2000). Java 2 : curso de programación (4a. ed. City: RA-MA 
+Editorial.
+➢ Deitel, P., Deitel, H., Elizondo, A. & Velézquez, S. (2016). Java : cómo
+programar. Ciudad de México: Pearson Educación.

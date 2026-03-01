@@ -1,0 +1,21 @@
+Programación
+Orientada a 
+Objetos
+By Ing. Edvin Nunez
+Caso de studio…
+• Convertidor de temperatura 
+  de Celsius a Fahrenheit y vice versa, 
+cuyas formulas son las siguientes
+• °F=(°C×9/5)+32
+• °C=(°F−32)×5/9
+
+Actores y objetos
+• Actores 
+  usuarios
+• Objetos 
+  temperatura (convertidor temperature)
+
+Clases, atributos y metodos
+
+Actividad
+• Revisar TDR

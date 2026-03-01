@@ -1,0 +1,63 @@
+Programación
+Orientada a 
+Objetos
+By Ing. Edvin Nunez
+Fases del Desarrollo de Programas 
+Orientados a Objetos
+Procesos clave para crear software modular y eficiente
+
+
+
+Analicemos…
+Control de Inventarios
+Control Clínico Electrónico
+
+Analicemos…
+Sistema de Control de Inventarios
+Problema: Pérdidas por mal control.
+Actores: Bodeguero, Administrador.
+Objetos: Producto, Entrada, Salida.
+Funcionales: Actualizar stock.
+No funcionales: Exactitud.
+Analicemos…
+Sistema de Historial Clínico Electrónico
+Problema: Expedientes físicos difíciles de manejar.
+Actores: Médico, Enfermera, Paciente.
+Objetos: Historial, Consulta, Diagnóstico.
+Funcionales: Registrar consultas.
+No funcionales: Confidencialidad, respaldo.
+
+
+
+UML (Unified 
+Modeling Language)
+• https://elibro.net/es/lc/cbues/titul
+os/52531/
+El Lenguaje Unificado de 
+Modelado (Unified Modeling
+Language, UML) es un 
+lenguaje estándar para 
+escribir planos de software. 
+UML puede utilizarse para 
+visualizar, especificar, 
+construir y documentar los 
+artefactos de un sistema que 
+involucre una gran cantidad 
+de software.
+
+Herramientas para modelado UML
+• ArgoUML
+• Draw.io (diagrams.net)
+
+
+
+
+
+
+Bibliografía
+➢ MORENO PÉREZ, Juan Carlos (2015). PROGRAMACIÓN ORIENTADA A OBJETOS. (1 ed. p. 13) Ra-Ma. 
+https://cbues.bibliotecasdigitales.com/read/9788499644875/index
+➢ Deitel, P., Deitel, H., Elizondo, A. & Velézquez, S. (2016). Java : cómo programar. Ciudad de México: 
+Pearson Educación.
+➢ Booch, G., Rumbaugh, J., & Jacobson, I. (2006). El lenguaje unificado de modelado: guía del usuario. 
+Pearson Educacion.
