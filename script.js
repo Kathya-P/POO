@@ -2968,6 +2968,7 @@ let isFinalShown = false;
 const userAnswers = Array.from({ length: quizData.length }, () => ({
   value: null,
   isCorrect: null,
+  checked: false,
 }));
 
 function showFinalScreen() {
@@ -3021,9 +3022,10 @@ function buildOptions(question, savedValue, questionIndex) {
 
     input.addEventListener("change", () => {
       userAnswers[questionIndex].value = index;
-      userAnswers[questionIndex].isCorrect =
-        Number(index) === question.answerIndex;
-      showFeedback(userAnswers[questionIndex].isCorrect, question.answerText);
+      userAnswers[questionIndex].isCorrect = null;
+      userAnswers[questionIndex].checked = false;
+      feedback.textContent = "";
+      feedback.className = "feedback";
       updateStats();
     });
 
@@ -3150,8 +3152,10 @@ function renderQuestion() {
   }
 
   if (savedValue !== null && savedValue !== undefined && question.type !== "short") {
-    const isCorrect = Number(savedValue) === question.answerIndex;
-    showFeedback(isCorrect, question.answerText);
+    if (userAnswers[currentQuestionIndex].checked) {
+      const isCorrect = Number(savedValue) === question.answerIndex;
+      showFeedback(isCorrect, question.answerText);
+    }
   }
 
   const isLast = currentIndex === filteredIndices.length - 1;
@@ -3173,7 +3177,7 @@ function updateStats() {
 
   indices.forEach((index) => {
     const entry = userAnswers[index];
-    if (entry.value !== null && entry.value !== undefined) {
+    if (entry.value !== null && entry.value !== undefined && entry.checked) {
       answered += 1;
       if (entry.isCorrect) {
         correct += 1;
@@ -3225,7 +3229,7 @@ function updateStats() {
     stats.total += 1;
 
     const entry = userAnswers[index];
-    if (entry.value !== null && entry.value !== undefined) {
+    if (entry.value !== null && entry.value !== undefined && entry.checked) {
       stats.answered += 1;
       if (entry.isCorrect) {
         stats.correct += 1;
@@ -3323,8 +3327,14 @@ function checkAnswer() {
   const userValue = userAnswers[currentQuestionIndex].value;
 
   if (question.type === "short") {
+    if (!userValue) {
+      feedback.textContent = "Escribe tu respuesta antes de revisar.";
+      feedback.className = "feedback warning";
+      return;
+    }
     const isCorrect = evaluateShortAnswer(question, userValue);
     userAnswers[currentQuestionIndex].isCorrect = isCorrect;
+    userAnswers[currentQuestionIndex].checked = true;
     showFeedback(isCorrect, question.answerText);
     updateStats();
     return;
@@ -3338,6 +3348,7 @@ function checkAnswer() {
 
   const isCorrect = Number(userValue) === question.answerIndex;
   userAnswers[currentQuestionIndex].isCorrect = isCorrect;
+  userAnswers[currentQuestionIndex].checked = true;
   showFeedback(isCorrect, question.answerText);
   updateStats();
 }
@@ -3370,6 +3381,10 @@ shuffleButton.addEventListener("click", () => {
 shortAnswer.addEventListener("input", () => {
   const value = shortAnswer.value;
   userAnswers[currentQuestionIndex].value = value.trim() ? value : null;
+  userAnswers[currentQuestionIndex].checked = false;
+  userAnswers[currentQuestionIndex].isCorrect = null;
+  feedback.textContent = "";
+  feedback.className = "feedback";
   updateStats();
 });
 prevButton.addEventListener("click", () => {
