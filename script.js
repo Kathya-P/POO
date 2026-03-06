@@ -3411,6 +3411,19 @@ topicSelect.addEventListener("change", (event) => {
   renderQuestion();
 });
 
+function shuffleQuizOptions() {
+  quizData.forEach((question) => {
+    if (question.type !== "mc") return;
+    const correctOption = question.options[question.answerIndex];
+    for (let i = question.options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [question.options[i], question.options[j]] = [question.options[j], question.options[i]];
+    }
+    question.answerIndex = question.options.indexOf(correctOption);
+  });
+}
+
+shuffleQuizOptions();
 buildTopicOptions();
 buildFilteredIndices();
 renderQuestion();
